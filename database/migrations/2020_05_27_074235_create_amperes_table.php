@@ -15,8 +15,10 @@ class CreateAmperesTable extends Migration
     {
         Schema::create('amperes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('fourth_name')->unique();
-            $table->string('fourth_image')->unique();
+            $table->string('name')->unique();
+            $table->string('image')->unique();
+            $table->string('article')->unique()->nullable();
+            $table->string('description')->unique()->nullable();
             $table->timestamps();
         });
     }

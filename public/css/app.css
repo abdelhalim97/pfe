@@ -31219,6 +31219,122 @@ a.text-muted:hover {
   color: #ffffff;
 }@charset "UTF-8";
 
+.black {
+  color: #000;
+}
+
+.blue {
+  color: #3490dc;
+}
+
+.indigo {
+  color: #6574cd;
+}
+
+.pink {
+  color: #f66d9b;
+}
+
+.red {
+  color: #e3342f;
+}
+
+.orange {
+  color: #f6993f;
+}
+
+.yellow {
+  color: #ffed4a;
+}
+
+.green {
+  color: #38c172;
+}
+
+.teal {
+  color: #4dc0b5;
+}
+
+.purple {
+  color: #9561e2;
+}
+
+.cyan {
+  color: #6cb2eb;
+}
+
+.eta {
+  color: #1184b2;
+}
+
+.ddanger {
+  color: #dc3545;
+}
+
+#bb {
+  color: #007bff;
+}
+
+#gg {
+  color: #3c8dbc;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#for {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#for:hover {
+  color: #e9ecef;
+  background: #495057;
+}
+
+#for:active {
+  color: #495057;
+  background: #e9ecef;
+}
+
+.ac {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.sz {
+  font-size: 25px;
+  color: #6f42c1;
+}
+
+#padd {
+  padding: 4% 1% 1% 4%;
+}
+
+#fn {
+  float: none;
+}
+
+.lougha {
+  padding-bottom: 4%;
+  font-size: 15px;
+}
+
+.lougha:hover {
+  text-decoration: none;
+  color: #28A745;
+}
+
+.nopad {
+  padding: 0 0 0 0;
+  padding-top: 0px;
+}
+
+#abyedh {
+  color: #fff;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -31253,7 +31369,7 @@ a.text-muted:hover {
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: "Times New Roman", Times, serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -31285,7 +31401,7 @@ section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -37619,7 +37735,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -37744,7 +37860,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -48206,5 +48322,10 @@ readers do not read off random characters that represent icons */
   overflow: visible;
   position: static;
   width: auto;
+}
+
+.router-link-exact-active {
+  background: #1184b2;
+  color: #fff;
 }
 

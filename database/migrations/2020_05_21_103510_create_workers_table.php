@@ -16,7 +16,6 @@ class CreateWorkersTable extends Migration
         Schema::create('workers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('full_name');
-            $table->tinyInteger('age');
             $table->bigInteger('nb_matricule');
             $table->timestamps();
         });

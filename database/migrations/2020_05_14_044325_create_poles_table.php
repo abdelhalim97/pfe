@@ -15,8 +15,10 @@ class CreatePolesTable extends Migration
     {
         Schema::create('poles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('third_name')->unique();
-            $table->string('third_image')->unique();
+            $table->string('name')->unique();
+            $table->string('image')->unique();
+            $table->string('article')->unique()->nullable();
+            $table->string('description')->unique()->nullable();
             $table->timestamps();
         });
     }

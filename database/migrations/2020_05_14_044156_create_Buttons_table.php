@@ -15,8 +15,10 @@ class CreateButtonsTable extends Migration
     {
         Schema::create('Buttons', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('first_name')->unique();
-            $table->string('first_image')->unique();
+            $table->string('name')->unique();
+            $table->string('image')->unique();
+            $table->string('article')->unique()->nullable();
+            $table->string('description')->unique()->nullable();
             $table->timestamps();
         });
     }

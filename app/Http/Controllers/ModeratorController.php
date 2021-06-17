@@ -2,28 +2,46 @@
 
 namespace App\Http\Controllers;
 use App\Admin;
-use Hash;
-use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-
+use App\Moderator;
+use App\Http\Resources\Moderator as ModeratorResource;
 class ModeratorController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Display a listing of the resource.
      *
-     * @return void
+     * @return \Illuminate\Http\Response
      */
     public function __construct()
     {
         $this->middleware('auth:moderator');
     }
-    //adding admin
-    public function addAdmin(){
+    public function index()
+    {
+        $admins = Admin::all();
+        return view('moderator.display-admin')->with('admins',$admins);
+        //return ModeratorResource::collection($admins);
 
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
         return view('moderator.add-admin');
     }
-    public function addNewAdmin(Request $request){
-        //dd($request->all());
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
         $data = request()->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
@@ -38,52 +56,61 @@ class ModeratorController extends Controller
         return redirect(route('moderator.admin.display'))->with('success','Admin created');
     }
 
-
-
-
-    public function display(){
-        $admins = Admin::all();
-        return view('moderator.display-admin')->with('admins',$admins);
-    }
-
-
-    public function showw($id){
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
         $admin = Admin::find($id);
-        //$admin = Admin::find($id)->paginate(1);
         return view('moderator.show-admin')->with('admin',$admin);
     }
-    //update admin
-    public function updateForm($id){
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
         $admin = Admin::find($id);
         return view('moderator.edit-admin')->with('admin',$admin);
     }
 
-    public function update(Request $request,$id){
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)//
+    {
         $this->validate($request,[
-        'name'=>'required',
-        'email'=>'required',
-        'password'=>'required'
-        ]);
-        $admin = Admin::find($id);
-        $admin->name = $request->get('name');
-        $admin->email = $request->get('email');
-        $admin->save();
-        return redirect(route('moderator.admin.display'))->with('succes','admin updated');
+            'name'=>'required',
+            'email'=>'required',
+            'password'=>'required'
+            ]);
+            $admin = Admin::find($id);
+            $admin->name = $request->get('name');
+            $admin->email = $request->get('email');
+            $admin->save();
+            return redirect(route('moderator.admin.display'))->with('succes','admin updated');
     }
 
-
-    public function deleteAdmin($id){
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
         $admin = Admin::find($id);
             $admin->delete();
         return redirect(route('moderator.admin.display'))->with('success','Admin deleted');
-    }
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('moderator');
     }
 }

@@ -8,7 +8,7 @@ use Auth;
 class ModeratorLoginController extends Controller
 {
     public function __construct () {
-        $this->middleware('guest:moderator');
+        $this->middleware('guest:moderator-api');//auth:api-moderator
     }
     public function showLoginForm () {
         return view('auth.moderator-login');

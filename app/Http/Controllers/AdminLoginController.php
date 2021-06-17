@@ -9,7 +9,7 @@ use Auth;
 class AdminLoginController extends Controller
 {
     public function __construct () {
-        $this->middleware('guest:admin');
+        $this->middleware('guest:admin-api');
     }
     public function showLoginForm () {
         return view('auth.admin-login');
@@ -25,6 +25,7 @@ class AdminLoginController extends Controller
             //it returns true or flase
         //attempt hash the pass automatically
         //in succeful,then redirect to their intended location
+
         return redirect()->intended(route('admin.dashboard'));
     }
     return redirect()->back()->withInput($request->only('email', 'remember'));

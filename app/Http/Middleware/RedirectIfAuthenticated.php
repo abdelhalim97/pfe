@@ -32,14 +32,15 @@ class RedirectIfAuthenticated
             if(Auth::guard('moderator')->check()){
                 return redirect()->route('moderator.dashboard');
             }
-            // case 'home';
+            case 'modertor.login';
+            if(Auth::guard('admin')->check()){
+                return redirect()->route('admin.dashboard');
+            }
+
+            // case 'login';
             // if(Auth::guard('moderator')->check()){
             //     return redirect()->route('moderator.dashboard');
             // }
-            case 'login';
-            if(Auth::guard('moderator')->check()){
-                return redirect()->route('moderator.dashboard');
-            }
 
             case 'admin';
             if(Auth::guard($guard)->check()){

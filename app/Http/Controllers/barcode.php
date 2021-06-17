@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use App\Worker;
+use App\Order;
 
 
 class barcode extends Controller
@@ -197,5 +199,16 @@ public function deleteProduct($id){
     $product->delete();
     return redirect(route('show.products'))->with('succes','product deleted');
 }
+public function search(){
+    if ($search = \Request::get('q')) {
+        $orders = Order::where(function($query) use ($search){
+            $query->where('id','LIKE',"%$search%")
+                    ->orWhere('of','LIKE',"%$search%");
+        })->paginate(20);
+    }else{
+        $orders = Order::latest()->paginate(5);
+    }
 
+    return $orders;
+}
 }

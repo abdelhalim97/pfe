@@ -5,10 +5,12 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
+
 use App\Notifications\ModeratorResetPasswordNotification;
 class Moderator extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable,HasApiTokens;
     protected $guard = 'moderator';//it takes the moderator from moderator guard in auth so it knows with which guard to work with
 
 

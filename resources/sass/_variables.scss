@@ -2,7 +2,7 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: "Times New Roman", Times, serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
@@ -17,3 +17,93 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+.black{
+    color:#000
+}
+.blue{
+    color:$blue;
+}
+.indigo{
+    color:$indigo;
+}
+.pink{
+    color:$pink;
+}
+.red{
+    color:$red;
+}
+.orange{
+    color:$orange;
+}
+.yellow{
+    color:$yellow;
+}
+.green{
+    color:$green;
+}
+.teal{
+    color:$teal;
+}
+.purple{
+    color:$purple;
+}
+.cyan{
+    color:$cyan;
+}
+.eta{
+    color:#1184b2;
+}
+.ddanger{
+    color:#dc3545;
+}
+#bb{
+    color:rgb(0, 123, 255);
+}
+#gg{
+    color:#3c8dbc;
+}
+.pointer{
+    cursor:pointer;}
+#for{
+    display:inline-block;
+    vertical-align: middle;
+
+}
+#for:hover{
+    color:#e9ecef;
+    background:#495057;
+}
+#for:active{
+    color:#495057;
+    background:#e9ecef;
+}
+.ac{
+    display:inline-block;
+    vertical-align: middle;
+}
+.sz{
+    font-size:25px;
+    color:#6f42c1;
+}
+#padd{
+    padding:4% 1% 1% 4%
+}
+#fn{
+    float:none
+}
+.lougha{
+    padding-bottom:4%;
+    //padding-top:5%;doesnt-work
+    font-size:15px;
+}
+.lougha:hover{
+   text-decoration:none;
+   color:#28A745;
+}
+.nopad{
+    padding:0 0 0 0;
+    padding-top:0px
+}
+#abyedh{
+color:#fff;
+}

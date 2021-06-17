@@ -42,27 +42,27 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'users',
-            'hash' => false,
+            //'hash' => false,
         ],
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
         ],
         'admin-api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'admins',
-            'hash' => false,
+            //'hash' => false,
         ],
         'moderator' => [
             'driver' => 'session',
             'provider' => 'moderators',
         ],
         'moderator-api' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'moderators',
-            'hash' => false,
+            //'hash' => false,
         ],
     ],
 

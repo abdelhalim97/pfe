@@ -6,6 +6,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/result', 'HomeController@index');
+
 //reading the barcode 4 any guest
 Route::get('/scanning','Scanner@show')->name('scanner.get');
 Route::post('/scanning','Scanner@scannerReader')->name('scanner.reader');
@@ -43,7 +45,7 @@ Route::get('/status/{id}','UserManage@status')->name('status');//worker*
 Route::prefix('admin')->group(function(){
     Route::get('/login', 'AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'AdminLoginController@login')->name('admin.login.submit');
-    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');//ma etnahich
     //password reset
     Route::post('/password/email', 'Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
   Route::get('/password/reset', 'Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
@@ -63,22 +65,37 @@ Route::get('/update/worker/{id}/delete','WorkerManage@deleteWorker')->name('admi
 Route::prefix('moderator')->group(function(){
     Route::get('/login', 'ModeratorLoginController@showLoginForm')->name('moderator.login');
     Route::post('/login', 'ModeratorLoginController@login')->name('moderator.login.submit');
-    Route::get('/', 'ModeratorController@index')->name('moderator.dashboard');
+    Route::get('/', 'ModeratorController@index')->name('moderator.dashboard');//ma etnahich
     //password reset
     Route::post('/password/email', 'Auth\ModeratorForgotPasswordController@sendResetLinkEmail')->name('moderator.password.email');
     Route::get('/password/reset', 'Auth\ModeratorForgotPasswordController@showLinkRequestForm')->name('moderator.password.request');
     Route::post('/password/reset', 'Auth\ModeratorResetPasswordController@reset');
     Route::get('/password/reset/{token}', 'Auth\ModeratorResetPasswordController@showResetForm')->name('moderator.password.reset');
     //adding new admin
-    Route::get('/add/admin','ModeratorController@addAdmin');
-    Route::post('/add/admin','ModeratorController@addNewAdmin');
+    // Route::get('/manage/admin','ModeratorController@create');
+    // Route::post('/manage/admin','ModeratorController@store');
     //manipulate admin
-    Route::get('/update/admin','ModeratorController@display')->name('moderator.admin.display');
-    Route::get('/update/admin/{id}','ModeratorController@showw')->name('moderator.admin.showw');
-    Route::get('/update/admin/{id}/edit','ModeratorController@updateForm')->name('moderator.admin.edit-form');
-    Route::post('/update/admin/{id}/edit','ModeratorController@update')->name('moderator.admin.edit');
-    //delete admin
-    Route::get('/update/admin/{id}/delete','ModeratorController@deleteAdmin')->name('moderator.admin.delete');
+    // Route::get('/manage/admins','ModeratorController@index')->name('moderator.admin.display');
+    // Route::get('/manage/admin/{id}','ModeratorController@show')->name('moderator.admin.showw');
+    // Route::get('/manage/admin/{id}/edit','ModeratorController@edit')->name('moderator.admin.edit-form');
+    // Route::post('/manage/admin/{id}/edit','ModeratorController@update')->name('moderator.admin.edit');
+    // //delete admin
+    // Route::get('/manage/admin/{id}/delete','ModeratorController@destroy')->name('moderator.admin.delete');
 
 });
+
+
+
+Route::get('{path}','AdminController@index')->where('path','.*');
+
 //Route::resource('/update/admin','ModeratorController@deleteAdmin');
+//2 chapms string /code article/desc/photo/nom de photo
+//when display elements just show articles names(option)
+//host |button scanner with cursor|img size|recherche|interface|Bel
+//si S we shiw double buttons
+//W  S  D|01|x
+//W normal  |S double buttons | D 1 button
+//01couleur
+//description
+//if D 1 button black
+//  s 2 couleurs gr red

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('content')
 <a href="{{route('moderator.login') }}">go back</a>
 <h1>admins</h1>
@@ -20,7 +20,7 @@
   <tbody>
     <tr>
       <th scope="row">{{$i}}</th>
-      <td><a href="{{url ('/moderator/update/admin/'.$admin->id) }}">{{$admin->name}}</a></td>
+      <td><a href="{{url ('/moderator/manage/admin/'.$admin->id) }}">{{$admin->name}}</a></td>
       @csrf
       <td>{{$admin->name}}</td>
       <td>{{$admin->email}}</td>

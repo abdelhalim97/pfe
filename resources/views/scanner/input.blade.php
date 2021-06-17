@@ -9,7 +9,7 @@
 </select>
 <input  type="text" name="scanner1" id="text" maxlength="4" onkeyup="moveCursor(this,'text2')"/>
 <input  type="text" name="scanner2" id="text2" maxlength="4" onkeyup="moveCursor(this,'text3')"/>
-<input  type="text" name="scanner3" id="text3"  onkeyup="moveCursor(this,'text4')"/><!-- max =9-->
+<input  type="text" name="scanner3" id="text3" maxlength="6" onkeyup="moveCursor(this,'text4')"/><!-- max =9-->
 <input  type="text" name="scanner4" id="text4" maxlength="4"/>
 
 <input value="Type registration number" href="#" data-toggle="modal" data-target="#myModal" class="btn btn-primary">

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $fillable = [
-        'name','image','first_element_id','second_element_id','third_element_id'
+        'name','image','button_id','boitier_id','pole_id','ampere_id'
     ];
     public function button(){
         return $this->belongsTo(Button::class);

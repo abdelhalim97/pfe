@@ -26,6 +26,7 @@ class AdminController extends Controller
     {
         $users= User::all();
         return view('admin')->with('users',$users);
+        // return Redirect::to('/user')->with('users',$users);
 
     }
 }

@@ -15,8 +15,10 @@ class CreateBoitiersTable extends Migration
     {
         Schema::create('boitiers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('second_name')->unique();
-            $table->string('second_image')->unique();
+            $table->string('name')->unique();
+            $table->string('image')->unique();
+            $table->string('article')->unique()->nullable();
+            $table->string('description')->unique()->nullable();
             $table->timestamps();
         });
     }

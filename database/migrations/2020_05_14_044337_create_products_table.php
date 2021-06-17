@@ -17,10 +17,10 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->unique()->nullable();
             $table->string('image')->unique()->nullable();
-            $table->unsignedBigInteger('first_element_id');
-            $table->unsignedBigInteger('second_element_id');
-            $table->unsignedBigInteger('third_element_id');
-            $table->unsignedBigInteger('fourth_element_id');
+            $table->unsignedBigInteger('button_id');
+            $table->unsignedBigInteger('boitier_id');
+            $table->unsignedBigInteger('pole_id');
+            $table->unsignedBigInteger('ampere_id');
             $table->timestamps();
         });
     }

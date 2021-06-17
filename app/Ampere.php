@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ampere extends Model
 {
     protected $fillable = [
-        'fourth_name','fourth_image'
+        'name','image'
     ];
     public function products(){
         return $this->hasMany(Product::class);

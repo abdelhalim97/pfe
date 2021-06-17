@@ -12,3 +12,7 @@ $fa-font-path:        "../webfonts";
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+.router-link-exact-active{
+    background:#1184b2;
+    color:#fff;
+}
